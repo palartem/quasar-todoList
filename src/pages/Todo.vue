@@ -117,11 +117,13 @@ export default {
             })
         },
         addTask() {
-            this.tasks.push({
-               title: this.newTask,
-               done: false,
-            });
-            this.newTask = '';
+            if (this.newTask) {
+                this.tasks.push({
+                    title: this.newTask,
+                    done: false,
+                });
+                this.newTask = '';
+            }
         },
     },
 }
